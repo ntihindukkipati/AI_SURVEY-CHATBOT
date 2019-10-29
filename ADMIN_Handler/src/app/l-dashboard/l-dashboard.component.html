@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<!--[if IE 9]>         <html class="ie9 no-focus" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!--> <html class="no-focus" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+
+  <title>Survey</title>
+
+  <meta name="description" content="OneUI - Admin Dashboard Template &amp; UI Framework created by pixelcave and published on Themeforest">
+  <meta name="author" content="pixelcave">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0">
+
+  <!-- Icons -->
+  <!-- The following icons can be replaced with your own, they are used by desktop and mobile browsers -->
+  <link rel="shortcut icon" href="../../assets/img/favicons/favicon.png">
+
+  <link rel="icon" type="image/png" href="../../assets/img/favicons/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="../../assets/img/favicons/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="../../assets/img/favicons/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="../../assets/img/favicons/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="../../assets/img/favicons/favicon-192x192.png" sizes="192x192">
+
+  <link rel="apple-touch-icon" sizes="57x57" href="../../assets/img/favicons/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="../../assets/img/favicons/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="../../assets/img/favicons/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="../../assets/img/favicons/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="../../assets/img/favicons/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="../../assets/img/favicons/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="../../assets/img/favicons/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="../../assets/img/favicons/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../assets/img/favicons/apple-touch-icon-180x180.png">
+  <!-- END Icons -->
+
+  <!-- Stylesheets -->
+  <!-- Web fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400italic,600,700%7COpen+Sans:300,400,400italic,600,700">
+
+  <!-- Bootstrap and OneUI CSS framework -->
+  <link rel="stylesheet" href="../../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" id="css-main" href="../../assets/css/oneui.css">
+
+  <!-- You can include a specific file from css/themes/ folder to alter the default color theme of the template. eg: -->
+  <!-- <link rel="stylesheet" id="css-theme" href="assets/css/themes/flat.min.css"> -->
+  <!-- END Stylesheets -->
+</head>
+<body>
+<!-- Page Container -->
+<!--
+    Available Classes:
+
+    'enable-cookies'             Remembers active color theme between pages (when set through color theme list)
+
+    'sidebar-l'                  Left Sidebar and right Side Overlay
+    'sidebar-r'                  Right Sidebar and left Side Overlay
+    'sidebar-mini'               Mini hoverable Sidebar (> 991px)
+    'sidebar-o'                  Visible Sidebar by default (> 991px)
+    'sidebar-o-xs'               Visible Sidebar by default (< 992px)
+
+    'side-overlay-hover'         Hoverable Side Overlay (> 991px)
+    'side-overlay-o'             Visible Side Overlay by default (> 991px)
+
+    'side-scroll'                Enables custom scrolling on Sidebar and Side Overlay instead of native scrolling (> 991px)
+
+    'header-navbar-fixed'        Enables fixed header
+-->
+<div id="page-container" class="sidebar-l side-scroll header-navbar-fixed">
+  <!-- Side Overlay-->
+  <aside id="side-overlay">
+    <!-- Side Overlay Scroll Container -->
+    <div id="side-overlay-scroll">
+
+
+      <!-- Side Content -->
+      <div class="side-content remove-padding-t">
+        <!-- Account -->
+        <div class="block pull-r-l">
+          <div class="block-header bg-gray-lighter">
+            <ul class="block-options">
+              <li>
+                <button type="button" data-toggle="block-option" data-action="content_toggle"></button>
+              </li>
+            </ul>
+            <h3 class="block-title">Account</h3>
+          </div>
+
+        </div>
+        <!-- END Account -->
+
+
+      </div>
+      <!-- END Side Content -->
+    </div>
+    <!-- END Side Overlay Scroll Container -->
+  </aside>
+  <!-- END Side Overlay -->
+
+  <!-- Header -->
+  <header id="header-navbar">
+    <div class="content-mini content-mini-full content-boxed">
+      <!-- Header Navigation Right -->
+      <ul class="nav-header pull-right">
+        <li class="visible-xs">
+          <!-- Toggle class helper (for .js-header-search below), functionality initialized in App() -> uiToggleClass() -->
+          <button class="btn btn-default" data-toggle="class-toggle" data-target=".js-header-search" data-class="header-search-xs-visible" type="button">
+            <i class="fa fa-search"></i>
+          </button>
+        </li>
+
+        <li>
+          <!-- Layout API, functionality initialized in App() -> uiLayoutApi() -->
+          <button class="btn btn-default btn-image" data-toggle="layout" data-action="side_overlay_toggle" type="button">
+            <img src="../../assets/img/avatars/avatar9.jpg" alt="Avatar">
+            <i class="fa"></i>
+          </button>
+        </li>
+      </ul>
+      <!-- END Header Navigation Right -->
+
+      <!-- Header Navigation Left -->
+      <ul class="nav-header pull-left">
+        <li class="header-content">
+          <a class="h5" href="index.html">
+
+          </a>
+        </li>
+        <li>
+          <!-- Themes functionality initialized in App() -> uiHandleTheme() -->
+          <div class="btn-group">
+            <button class="btn btn-link text-gray dropdown-toggle" data-toggle="dropdown" type="button">
+              <!--<i class="si si-drop"></i>-->
+            </button>
+          </div>
+        </li>
+      </ul>
+      <!-- END Header Navigation Left -->
+    </div>
+  </header>
+  <!-- END Header -->
+
+  <!-- Main Container -->
+  <main id="main-container">
+    <!-- Sub Header -->
+    <div class="bg-gray-lighter visible-xs">
+      <div class="content-mini content-boxed">
+        <button class="btn btn-block btn-default visible-xs push" data-toggle="collapse" data-target="#sub-header-nav">
+          <i class="fa fa-navicon push-5-r"></i>Menu
+        </button>
+      </div>
+    </div>
+    <div class="bg-primary-lighter collapse navbar-collapse remove-padding" id="sub-header-nav">
+      <div class="content-mini content-boxed">
+        <ul class="nav nav-pills nav-sub-header push">
+          <li class="active">
+            <div class="form-group">
+              <button type="button" class="btn btn-block btn-primary"> DashBoard</button>
+            </div>
+          </li>
+          <!--Toggle Professors menu starts-->
+          <li>
+            <button type="button" class="btn btn-block btn-primary" (click)="showProf();">Professors</button>
+          </li>
+          <li>
+            <button type="button" class="btn btn-block btn-primary" (click)="showQues();">Questions</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- END Sub Header -->
+
+    <!-- Page Content -->
+    <div class="content content-boxed">
+      <!-- Section -->
+      <div class="bg-image img-rounded overflow-hidden push" style="background-image: url('../../assets/img/photos/photo29@2x.jpg');">
+        <div class="bg-black-op">
+          <div class="content">
+            <div class="block block-transparent block-themed text-center">
+              <div class="block-content">
+                <h1 class="h1 font-w700 text-white animated fadeInDown push-5">Dashboard</h1>
+                <h2 class="h4 font-w400 text-white-op animated fadeInUp">Welcome Administrator.</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- END Section -->
+
+      <!-- Charts -->
+      <div class="row">
+        <div class="col-md-6">
+          <div class="block block-rounded block-opt-refresh-icon8">
+            <div class="block-header">
+              <ul class="block-options">
+                <li>
+                  <button type="button" data-toggle="block-option" data-action="refresh_toggle" data-action-mode="demo">
+                    <!--<i class="si si-refresh"></i>--></button>
+                </li>
+              </ul>
+              <h3 class="block-title">Dashboard</h3>
+            </div>
+            <div class="content-mini content-boxed">
+              <ul class="nav nav-pills nav-sub-header push" *ngIf="showProfOptions">
+                <li class="active">
+                  <button type="button" class="btn btn-block btn-primary" (click)="showAddProf();"> Add Professors</button>
+                </li>
+                <li>
+                  <button type="button" class="btn btn-block btn-primary" (click)="showEditProf();"> Edit Professors</button>
+                </li>
+                <li>
+                  <button type="button" class="btn btn-block btn-primary" (click)="showDelProf();"> Delete Professors</button>
+                </li>
+              </ul>
+            </div>
+            <div class="content-mini content-boxed">
+              <ul class="nav nav-pills nav-sub-header push" *ngIf="showQuesOptions">
+                <li class="active">
+                  <button type="button" class="btn btn-block btn-primary" (click)="showAddQues();"> Add Questions</button>
+                </li>
+                <li>
+                  <button type="button" class="btn btn-block btn-primary" (click)="showEditQues();"> Edit Questions</button>
+                </li>
+                <li>
+                  <button type="button" class="btn btn-block btn-primary" (click)="showDelQues();"> Delete Questions</button>
+                </li>
+              </ul>
+            </div>
+            <div class="block-content block-content-full bg-gray-lighter" *ngIf="addShown">
+              <!-- Chart.js Charts (initialized in js/pages/base_pages_dashboard_v2.js), for more examples you can check out http://www.chartjs.org/docs/ -->
+              <label>Add Professor</label>
+              <form class="js-validation-login form-horizontal push-30-t push-50" [formGroup]="addProfForm" (ngSubmit)="onFormSubmit(addProfForm.value)" method="post">
+              <div class="form-group">
+                <div class="form-group col-lg-6 col-lg-offset-3 input-group">
+                  Professor Name :
+                  <mat-form-field class="example-full-width">
+                  <input matInput type="text" placeholder="Professor" class="form-control" formControlName="a_prof" id="a_prof" #prof>
+                  </mat-form-field>
+                  <br>
+                  Address:
+                  <mat-form-field class="example-full-width">
+                  <input matInput type="text" placeholder="Address" class="form-control" formControlName="a_address" id="a_address" #address>
+                  </mat-form-field>
+                  <br>
+                  Phone Number:
+                  <mat-form-field class="example-full-width">
+                  <input matInput type="text" placeholder="Phone Number" class="form-control" formControlName="a_phone" id="a_phone" #phone>
+                  </mat-form-field>
+                  <br>
+                  Email:
+                  <mat-form-field class="example-full-width">
+                  <input matInput type="text" placeholder="email" class="form-control" formControlName="a_email" id="a_email" #email>
+                  </mat-form-field>
+
+                </div>
+                <div class="form-group">
+                  <div class="col-xs-12 col-sm-6 col-md-4">
+                    <button type="button" class="btn btn-block btn-primary" (click)="addProf(addProfForm.value);" > Add</button>
+                  </div>
+                </div>
+              </div>
+              </form>
+              <div style="height: 320px;"><canvas class="js-dash-chartjs-earnings"></canvas></div>
+            </div>
+
+            <div class="block-content block-content-full bg-gray-lighter" *ngIf="editShown">
+              <!-- Chart.js Charts (initialized in js/pages/base_pages_dashboard_v2.js), for more examples you can check out http://www.chartjs.org/docs/ -->
+              <label>Edit Professor Details</label>
+              <form class="js-validation-login form-horizontal push-30-t push-50" [formGroup]="editProfForm" (ngSubmit)="onFormSubmit(editProfForm.value)" method="post">
+              <div class="form-group">
+                <div class="form-group col-lg-6 col-lg-offset-3 input-group">
+                  Professor Name :
+                  <select class="form-control" id="e_prof" formControlName="e_prof" (change)="getSelectedValue($event.target.value)" [(ngModel)]="profDet.a_prof" #eProfName>
+                    <option>---Select---</option>
+                    <option>BeakYoungChoi</option>
+                    <option>YugyungLee</option>
+                    <option>YijieHan</option>
+                  </select>
+                  <br>
+                  <div *ngIf="showProfDet">
+                  Address:
+                    <mat-form-field class="example-full-width">
+                    <input matInput type="text" placeholder="Address" class="form-control" formControlName="e_address" id="e_address" [(ngModel)]="profDet.a_address" #eAddress>
+                    </mat-form-field>
+                  <br>
+                  Phone Number:
+                    <mat-form-field class="example-full-width">
+                    <input matInput type="text" placeholder="Phone Number" class="form-control" formControlName="e_phone" id="e_phone" [(ngModel)]="profDet.a_phone" #ePhone>
+                    </mat-form-field>
+                  <br>
+                  Email:
+                    <mat-form-field class="example-full-width">
+                    <input matInput type="text" placeholder="Email" class="form-control" formControlName="e_email" id="e_email" [(ngModel)]="profDet.a_email" #eEmail>
+                    </mat-form-field>
+                    <br>
+                    <div class="form-group">
+                      <div class="col-xs-12 col-sm-6 col-md-4 button-padding">
+                        <button type="button" class="btn btn-block btn-primary" (click)="saveProfessor(editProfForm.value);" > Save</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group" *ngIf="showEditButton">
+                  <div class="col-xs-12 col-sm-6 col-md-4">
+                    <button type="button" class="btn btn-block btn-primary" (click)="editProf();" > Edit</button>
+                  </div>
+                </div>
+              </div>
+              </form>
+              <div style="height: 320px;"><canvas class="js-dash-chartjs-earnings"></canvas></div>
+            </div>
+
+            <div class="block-content block-content-full bg-gray-lighter" *ngIf="delShown">
+              <!-- Chart.js Charts (initialized in js/pages/base_pages_dashboard_v2.js), for more examples you can check out http://www.chartjs.org/docs/ -->
+              <label>Delete Professor</label>
+              <div class="form-group">
+                <div class="form-group col-lg-6 col-lg-offset-3 input-group">
+                  Professor Name : <select class="form-control" id="dProfName" #dProfName formControlName="dProfName" (change)="deleteSelectedValue($event.target.value)">
+                  <option>---Select---</option>
+                  <option>BeakYoungChoi</option>
+                  <option>YugyungLee</option>
+                  <option>efwefwefwef</option>
+                </select>
+                <br>
+                </div>
+                <div class="form-group">
+                  <div class="col-xs-12 col-sm-6 col-md-4">
+                    <button type="button" class="btn btn-block btn-primary" (click)="delProf();" > Delete</button>
+                  </div>
+                </div>
+              </div>
+              <div style="height: 320px;"><canvas class="js-dash-chartjs-earnings"></canvas></div>
+            </div>
+              <!--Adding a question starts-->
+            <div class="block-content block-content-full bg-gray-lighter" *ngIf="qaddShown">
+              <!-- Chart.js Charts (initialized in js/pages/base_pages_dashboard_v2.js), for more examples you can check out http://www.chartjs.org/docs/ -->
+              <label>Add Questions</label>
+              <div class="form-group">
+                <div class="form-group col-lg-6 col-lg-offset-3 input-group">
+                  Question Set:  <select class="form-control" id="qSet" #qSet>
+                  <option>---Select---</option>
+                  <option>Set-I</option>
+                  <option>Set-II</option>
+                  <option>Set-III</option>
+                  <option>Set-IV</option>
+                  <option>Set-V</option>
+                </select>
+                  <br>
+                  Questions:
+                  <br>
+                  Question 1:<textarea class="form-control" id="q1" #q1></textarea>
+                  <br>
+                  Question 2:<textarea class="form-control" id="q2" #q2></textarea>
+                  <br>
+                  Question 3:<textarea class="form-control" id="q3" #q3></textarea>
+                  <br>
+                  Question 4:<textarea class="form-control" id="q4" #q4></textarea>
+                  <br>
+                  Question 5:<textarea class="form-control" id="q5" #q5></textarea>
+
+                </div>
+                <div class="form-group">
+                  <div class="col-xs-12 col-sm-6 col-md-4">
+                    <button type="button" class="btn btn-block btn-primary" (click)="addQuestions();" > Add</button>
+                  </div>
+                </div>
+              </div>
+              <div style="height: 320px;"><canvas class="js-dash-chartjs-earnings"></canvas></div>
+            </div>
+            <!--Adding a question ends-->
+
+            <!--Editing a Question Starts-->
+            <div class="block-content block-content-full bg-gray-lighter" *ngIf="qeditShown">
+              <label>Edit Questions</label>
+              <div class="form-group">
+                <div class="form-group col-lg-6 col-lg-offset-3 input-group">
+                  Question Set:  <select class="form-control" id="eqSet" #eqSet>
+                  <option>---Select---</option>
+                  <option>Set-I</option>
+                  <option>Set-II</option>
+                  <option>Set-III</option>
+                  <option>Set-IV</option>
+                  <option>Set-V</option>
+                </select>
+                  <br>
+                  <div *ngIf="questionShow">
+                    Questions:
+                    <br>
+                    Question 1:<textarea class="form-control" id="eq1" #eq1></textarea>
+                    <br>
+                    Question 2:<textarea class="form-control" id="eq2" #eq2></textarea>
+                    <br>
+                    Question 3:<textarea class="form-control" id="eq3" #eq3></textarea>
+                    <br>
+                    Question 4:<textarea class="form-control" id="eq4" #eq4></textarea>
+                    <br>
+                    Question 5:<textarea class="form-control" id="eq5" #eq5></textarea>
+                    <br>
+                    <div class="form-group">
+                      <div class="col-xs-12 col-sm-6 col-md-4">
+                        <button type="button" class="btn btn-block btn-primary" (click)="saveQuestions();" > Save</button>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+                <div class="form-group" *ngIf="buttonShow">
+                  <div class="col-xs-12 col-sm-6 col-md-4">
+                    <button type="button" class="btn btn-block btn-primary" (click)="editQuestions();" > Edit</button>
+                  </div>
+                </div>
+              </div>
+              <div style="height: 320px;"><canvas class="js-dash-chartjs-earnings"></canvas></div>
+            </div>
+
+            <!--Editing a Question Ends-->
+
+            <!--Deleting a Question Starts-->
+            <div class="block-content block-content-full bg-gray-lighter" *ngIf="delQShown">
+              <label>Delete Questions</label>
+              <div class="form-group">
+                <div class="form-group col-lg-6 col-lg-offset-3 input-group">
+                  Question Set:  <select class="form-control" id="dqSet" #dqSet>
+                  <option>---Select---</option>
+                  <option>Set-I</option>
+                  <option>Set-II</option>
+                  <option>Set-III</option>
+                  <option>Set-IV</option>
+                  <option>Set-V</option>
+                </select>
+                  <br>
+                </div>
+                <div class="form-group">
+                  <div class="col-xs-12 col-sm-6 col-md-4">
+                    <button type="button" class="btn btn-block btn-primary" (click)="delQuestions();" > Delete</button>
+                  </div>
+                </div>
+
+              <div style="height: 320px;"><canvas class="js-dash-chartjs-earnings"></canvas></div>
+            </div>
+            </div>
+
+            <!--Deleting a Question Ends-->
+
+
+            <div class="block-content text-center">
+              <div class="row items-push-2x text-center push-20-t">
+
+
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="block block-rounded block-opt-refresh-icon8">
+            <div class="block-header">
+              <ul class="block-options">
+                <li>
+                  <button type="button" data-toggle="block-option" data-action="refresh_toggle" data-action-mode="demo">
+                    <!--<i class="si si-refresh"></i>--></button>
+                </li>
+              </ul>
+              <h3 class="block-title">Professors Performance Chart</h3>
+            </div>
+            <div class="block-content block-content-full bg-gray-lighter text-center">
+              <!-- Chart.js Charts (initialized in js/pages/base_pages_dashboard_v2.js), for more examples you can check out http://www.chartjs.org/docs/ -->
+              <div style="height: 320px;"><canvas class="js-dash-chartjs-sales"></canvas></div>
+            </div>
+            <div class="block-content text-center">
+              <div class="row items-push-2x text-center push-20-t">
+
+
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- END Charts -->
+    </div>
+    <!-- END Page Content -->
+  </main>
+  <!-- END Main Container -->
+
+  <!-- Footer -->
+  <footer id="page-footer" class="bg-body font-s12">
+
+  </footer>
+  <!-- END Footer -->
+</div>
+<!-- END Page Container -->
+
+<!-- OneUI Core JS: jQuery, Bootstrap, slimScroll, scrollLock, Appear, CountTo, Placeholder, Cookie and App.js -->
+<script src="../../assets/js/core/jquery.min.js"></script>
+<script src="../../assets/js/core/bootstrap.min.js"></script>
+<script src="../../assets/js/core/jquery.slimscroll.min.js"></script>
+<script src="../../assets/js/core/jquery.scrollLock.min.js"></script>
+<script src="../../assets/js/core/jquery.appear.min.js"></script>
+<script src="../../assets/js/core/jquery.countTo.min.js"></script>
+<script src="../../assets/js/core/jquery.placeholder.min.js"></script>
+<script src="../../assets/js/core/js.cookie.min.js"></script>
+<script src="../../assets/js/app.js"></script>
+
+<!-- Page Plugins -->
+<script src="../../assets/js/plugins/chartjs/Chart.min.js"></script>
+
+<!-- Page JS Code -->
+<script src="../../assets/js/pages/base_pages_dashboard_v2.js"></script>
+<script>
+    jQuery(function () {
+        // Init page helpers (CountTo plugin)
+        App.initHelpers('appear-countTo');
+    });
+</script>
+</body>
+</html>
