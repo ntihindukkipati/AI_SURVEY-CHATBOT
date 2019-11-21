@@ -10,7 +10,7 @@ import { RegistrationComponent } from './registration/registration.component';
 import { GDashboardComponent } from './g-dashboard/g-dashboard.component';
 import { LDashboardComponent } from './l-dashboard/l-dashboard.component';
 import { ProfDashboardComponent } from './prof-dashboard/prof-dashboard.component';
-import {MatButtonModule, MatFormFieldModule, MatIconModule, MatInputModule, MatMenuModule} from '@angular/material';
+import {MatButtonModule, MatFormFieldModule, MatIconModule, MatInputModule, MatMenuModule, MatRadioModule} from '@angular/material';
 import { QuestionsComponent } from './questions/questions.component';
 import {MatDialogModule} from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -46,7 +46,8 @@ const appRoutes: Routes = [
     MatButtonModule,
     MatFormFieldModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    MatRadioModule
   ],
   providers: [],
   bootstrap: [AppComponent],

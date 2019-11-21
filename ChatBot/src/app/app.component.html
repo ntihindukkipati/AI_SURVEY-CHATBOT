@@ -1,4 +1,4 @@
-
+<div class="back">
 
 <div class="chat-output">
   <div class="bot-message">
@@ -24,6 +24,7 @@
 <audio controls="" *ngIf="url">
   <source [src]="sanitize(url)" type="audio/wav">
 </audio></div>
+</div>
 </div>
 <style>
   @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700);
@@ -53,16 +54,20 @@
   .Chat_Input {
 
     padding: 20px;
-    background: #eee;
+    background: wheat;
     border: 1px solid #ccc;
     border-bottom: 0;
+  bottom: 0;
+
   .user-input {
     width: 100%;
+    bottom: 0;
     font-size: 2rem;
     border: 1px solid #ccc;
     border-radius: 4px;
     padding: 8px;
   }
+
   }
 
 </style>

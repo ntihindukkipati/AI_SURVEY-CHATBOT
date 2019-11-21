@@ -1,81 +1,32 @@
 <h2>Questions</h2>
-
+<form class="js-validation-login form-horizontal push-30-t push-50" [formGroup]="quesSelForm" (ngSubmit)="onFormSubmit(quesSelForm.value)" method="post">
 <div class="d-flex justify-content-between">
-  <div>
+  <div *ngFor="let question of quesSets">
+    <div>
+    <mat-radio-button value={{question.qSet}} formControlName="quesSet" (change)="onSelectionChange(question.qSet)">{{question.qSet}}</mat-radio-button>
     <ul>
       <li>
-        Set-I
+        {{question.q1}}
       </li>
       <li>
-        Set-II
+        {{question.q2}}
       </li>
       <li>
-        Set-III
+        {{question.q3}}
       </li>
+      <li>
+        {{question.q4}}
+      </li>
+      <li>
+        {{question.q5}}
+      </li>
+
     </ul>
+    </div>
   </div>
-  <div>
-    <h4>Set-I</h4>
-    <ul>
-      <li>
-        What would the teacher start doing to improve the course?
-      </li>
-      <li>
-        What would the teacher stop doing to improve the course?
-      </li>
-      <li>
-        What is working with the course and continue the same way?
-      </li>
-      <li>
-        What is the overall experience with the course?
-      </li>
-      <li>
-        Do you have any other comments?
-      </li>
-    </ul>
-  </div>
-  <!--<div>
-    <h4>Set-II</h4>
-    <ul>
-      <li>
-        What is the first thing you come to think of that is working well with the course?
-      </li>
-      <li>
-        What is the second thing you come to think of that is working well with the course?
-      </li>
-      <li>
-        What do you wish the teacher to do in order to improve the course?
-      </li>
-      <li>
-        What is the overall experience with the course?
-      </li>
-      <li>
-        Do you have any other comments?
-      </li>
-    </ul>
-  </div>
-  <div>
-    <h4>Set-III</h4>
-    <ul>
-      <li>
-        What is the overall experience with the course?
-      </li>
-      <li>
-        What can be improved?
-      </li>
-      <li>
-        What has been working well?
-      </li>
-      <li>
-        How are the classes going on?
-      </li>
-      <li>
-        Do you have any other comments?
-      </li>
-    </ul>
-  </div>-->
 </div>
+</form>
 <button mat-button  (click)="onClose()" class="right" color="primary">
-  <mat-icon>close</mat-icon>
+  <mat-icon>Select</mat-icon>
 </button>
 

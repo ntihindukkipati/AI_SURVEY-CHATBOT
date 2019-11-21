@@ -25,6 +25,7 @@ export class LDashboardComponent implements OnInit {
   addShown: boolean = false;
   editShown: boolean = false;
   qaddShown: boolean = false;
+  quesButtonShow: boolean = false;
   qeditShown: boolean = false;
   delQShown: boolean = false;
   delShown: boolean = false;
@@ -41,10 +42,15 @@ export class LDashboardComponent implements OnInit {
   aAddress: any;
   aPhone: any;
   addProfForm: FormGroup;
+  editQuesForm: FormGroup;
   takeSelected: string;
+  takeSelectedQues: string;
   profDet: any;
+  quesDet: any;
   delSelected: string;
   updatedProf = {};
+  updatedQues = {};
+
   constructor(private router: Router, private api: ApiService, private formBuilder: FormBuilder) { }
 
   ngOnInit() {
@@ -53,6 +59,15 @@ export class LDashboardComponent implements OnInit {
       'a_address': [null, Validators.required],
       'a_phone': [null, Validators.required],
       'a_email': [null, Validators.required]
+    });
+
+    this.editQuesForm = this.formBuilder.group({
+      'qSet': [null, Validators.required],
+      'q1': [null, Validators.required],
+      'q2': [null, Validators.required],
+      'q3': [null, Validators.required],
+      'q4': [null, Validators.required],
+      'q5': [null, Validators.required]
     });
 
     this.editProfForm = this.formBuilder.group({
@@ -144,13 +159,16 @@ export class LDashboardComponent implements OnInit {
     this.delQShown = false;
     this.qaddShown = false;
   }
-
+/*On click of Questions tab*/
   showQues() {
-    this.showQuesOptions = ! this.showQuesOptions;
+    this.qeditShown = true;
+    this.questionShow = false;
+    this.quesButtonShow= true;
+    /*this.showQuesOptions = ! this.showQuesOptions;
     this.showProfOptions = false;
     this.editShown = false;
     this.delShown = false;
-    this.addShown = false;
+    this.addShown = false;*/
   }
 
   deleteSelectedValue(delSel: string){
@@ -184,7 +202,20 @@ export class LDashboardComponent implements OnInit {
     this.qeditShown = false;
     this.qaddShown = false;
   }
-  addQuestions() {
+
+  getSelectedQuestionValue(selectedValue:string){
+    console.log('value is ',selectedValue);
+    this.takeSelectedQues = selectedValue;
+    this.api.getQues(selectedValue)
+      .subscribe(res => {
+        console.log('response is: ',res);
+        this.quesDet = res;
+        console.log('quesdet',this.quesDet);
+      }, (err) => {
+        console.log(err);
+      });
+  }
+  /*addQuestions() {
     if (this.eqSet.nativeElement.value.length <= 0 || this.q1.nativeElement.value.length <= 0
     || this.q2.nativeElement.value.length <= 0 || this.q2.nativeElement.value.length <= 0
     || this.q3.nativeElement.value.length <= 0 || this.q4.nativeElement.value.length <= 0 || this.q5.nativeElement.value.length <= 0) {
@@ -193,28 +224,57 @@ export class LDashboardComponent implements OnInit {
       alert('Questions added successfully');
     }
 
-  }
+  }*/
 
   editQuestions() {
-    if (this.eqSet.nativeElement.value.length <= 0) {
-      alert('Select a question set you want to edit');
-    } else {
       this.questionShow = ! this.questionShow;
       this.buttonShow = false;
-    }
+    /*console.log("SEnding email ");
+    this.api.sendEmail()
+      .subscribe(res => {
+        console.log(res);
+        this.sentMail = res;
+      }, (err) => {
+        console.log(err);
+      });*/
+  }
+hello(editQuesForm){
+    console.log('hai');
+  this.questionShow = false;
+  alert("Questions saved successfully");
+  console.log("questionForm ",editQuesForm);
+  console.log("value", this.takeSelectedQues);
+  this.api.updateQues(this.takeSelectedQues, this.quesDet)
+    .subscribe(res => {
+      console.log(res);
+      this.updatedQues = res;
+    }, (err) => {
+      console.log(err);
+    });
+}
+  saveQuestion(editQuesForm) {
+    alert("hi");
+    /*this.buttonShow = true;*/
+    this.questionShow = false;
+    alert("Questions saved successfully");
+    console.log("questionForm ",editQuesForm);
+    console.log("value", this.takeSelectedQues);
+    this.api.updateQues(this.takeSelectedQues, this.quesDet)
+      .subscribe(res => {
+        console.log(res);
+        this.updatedQues = res;
+      }, (err) => {
+        console.log(err);
+      });
   }
 
-  saveQuestions() {
-
-  }
-
-  delQuestions() {
+  /*delQuestions() {
     if (this.dqSet.nativeElement.value.length <= 0){
       alert('Select a question set');
     } else {
       alert('Questions under this Question Set deleted successfully');
     }
 
-  }
+  }*/
 
 }

@@ -335,7 +335,7 @@
               <label>Add Questions</label>
               <div class="form-group">
                 <div class="form-group col-lg-6 col-lg-offset-3 input-group">
-                  Question Set:  <select class="form-control" id="qSet" #qSet>
+                  Question Set:  <select class="form-control" id="aqSet" #aqSet>
                   <option>---Select---</option>
                   <option>Set-I</option>
                   <option>Set-II</option>
@@ -346,15 +346,15 @@
                   <br>
                   Questions:
                   <br>
-                  Question 1:<textarea class="form-control" id="q1" #q1></textarea>
+                  Question 1:<textarea class="form-control" id="aq1" #aq1></textarea>
                   <br>
-                  Question 2:<textarea class="form-control" id="q2" #q2></textarea>
+                  Question 2:<textarea class="form-control" id="aq2" #aq2></textarea>
                   <br>
-                  Question 3:<textarea class="form-control" id="q3" #q3></textarea>
+                  Question 3:<textarea class="form-control" id="aq3" #aq3></textarea>
                   <br>
-                  Question 4:<textarea class="form-control" id="q4" #q4></textarea>
+                  Question 4:<textarea class="form-control" id="aq4" #aq4></textarea>
                   <br>
-                  Question 5:<textarea class="form-control" id="q5" #q5></textarea>
+                  Question 5:<textarea class="form-control" id="aq5" #aq5></textarea>
 
                 </div>
                 <div class="form-group">
@@ -370,44 +370,62 @@
             <!--Editing a Question Starts-->
             <div class="block-content block-content-full bg-gray-lighter" *ngIf="qeditShown">
               <label>Edit Questions</label>
+              <form class="js-validation-login form-horizontal push-30-t push-50" [formGroup]="editQuesForm" (ngSubmit)="onFormSubmit(editQuesForm.value)" method="post">
               <div class="form-group">
                 <div class="form-group col-lg-6 col-lg-offset-3 input-group">
-                  Question Set:  <select class="form-control" id="eqSet" #eqSet>
+                  Question Set:  <select class="form-control" id="qSet" formControlName="qSet" (change)="getSelectedQuestionValue($event.target.value)" [(ngModel)]="quesDet.qSet" #qSet>
                   <option>---Select---</option>
-                  <option>Set-I</option>
-                  <option>Set-II</option>
-                  <option>Set-III</option>
-                  <option>Set-IV</option>
-                  <option>Set-V</option>
+                  <option>Set1</option>
+                  <option>Set2</option>
+                  <option>Set3</option>
+                  <option>Set4</option>
+                  <option>Set5</option>
                 </select>
                   <br>
                   <div *ngIf="questionShow">
                     Questions:
                     <br>
-                    Question 1:<textarea class="form-control" id="eq1" #eq1></textarea>
+                    Question 1:
+                    <mat-form-field class="example-full-width">
+                      <textarea matInput type="text" placeholder="Question1" class="form-control" formControlName="q1" id="q1" [(ngModel)]="quesDet.q1" #q1></textarea>
+                    </mat-form-field>
                     <br>
-                    Question 2:<textarea class="form-control" id="eq2" #eq2></textarea>
+                    Question 2:
+                    <mat-form-field class="example-full-width">
+                      <textarea matInput type="text" placeholder="Question2" class="form-control" formControlName="q2" id="q2" [(ngModel)]="quesDet.q2" #q2></textarea>
+                    </mat-form-field>
                     <br>
-                    Question 3:<textarea class="form-control" id="eq3" #eq3></textarea>
+                    Question 3:
+                    <mat-form-field class="example-full-width">
+                      <textarea matInput type="text" placeholder="Question3" class="form-control" formControlName="q3" id="q3" [(ngModel)]="quesDet.q3" #q3></textarea>
+                    </mat-form-field>
                     <br>
-                    Question 4:<textarea class="form-control" id="eq4" #eq4></textarea>
+                    Question 4:
+                    <mat-form-field class="example-full-width">
+                      <textarea matInput type="text" placeholder="Question4" class="form-control" formControlName="q4" id="q4" [(ngModel)]="quesDet.q4" #q4></textarea>
+                    </mat-form-field>
                     <br>
-                    Question 5:<textarea class="form-control" id="eq5" #eq5></textarea>
+                    Question 5:
+                    <mat-form-field class="example-full-width">
+                      <textarea matInput type="text" placeholder="Question5" class="form-control" formControlName="q5" id="q5" [(ngModel)]="quesDet.q5" #q5></textarea>
+                    </mat-form-field>
                     <br>
                     <div class="form-group">
                       <div class="col-xs-12 col-sm-6 col-md-4">
-                        <button type="button" class="btn btn-block btn-primary" (click)="saveQuestions();" > Save</button>
+                        <button type="button" class="btn btn-block btn-primary" (click)="hello(editQuesForm.value);">QuesSave</button>
+                        <!--<button type="button" class="btn btn-block btn-primary" (click)="saveQuestion(editQuesForm.value);"> Save</button>-->
                       </div>
                     </div>
                   </div>
 
                 </div>
-                <div class="form-group" *ngIf="buttonShow">
-                  <div class="col-xs-12 col-sm-6 col-md-4">
-                    <button type="button" class="btn btn-block btn-primary" (click)="editQuestions();" > Edit</button>
+                <div class="form-group">
+                  <div class="col-xs-12 col-sm-6 col-md-4" ><!--*ngIf="quesButtonShow"-->
+                    <button type="button" class="btn btn-block btn-primary" (click)="editQuestions();"> Edit</button>
                   </div>
                 </div>
               </div>
+            </form>
               <div style="height: 320px;"><canvas class="js-dash-chartjs-earnings"></canvas></div>
             </div>
 

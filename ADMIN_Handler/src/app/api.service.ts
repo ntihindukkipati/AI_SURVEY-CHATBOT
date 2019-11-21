@@ -9,12 +9,15 @@ const httpOptions = {
 const apiUrl = '/api';
 const gapiUrl = '/gapi';
 const papiUrl = '/papi';
+const qapiUrl = '/qapi';
+const sapiUrl = '/sapi';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
-
+  selectedQuestion: any;
+  professorName : any;
   constructor(private http: HttpClient) {
   }
 
@@ -111,5 +114,47 @@ export class ApiService {
       .pipe(
         catchError(this.handleError)
       );
+  }
+
+  getQues(quesName: string): Observable<any> {
+    const url = `${qapiUrl}/${quesName}`;
+    console.log("url", url);
+    return this.http.get(url, httpOptions).pipe(
+      map(this.extractData),
+      catchError(this.handleError));
+  }
+
+  updateQues(quesName: string, data): Observable<any> {
+    const url = `${qapiUrl}/${quesName}`;
+    console.log("update url", url);
+    return this.http.put(url, data, httpOptions).pipe(
+      map(this.extractData),
+      catchError(this.handleError));
+  }
+
+  sendEmail(emailIds: string): Observable<any> {
+    const url = `${qapiUrl}/${emailIds}`;
+    console.log("email url", url);
+    return this.http.post(url, httpOptions).pipe(
+      map(this.extractData),
+      catchError(this.handleError));
+  }
+
+  getQuestions(): Observable<any> {
+    const url = `${qapiUrl}`;
+    console.log("get url", url);
+    return this.http.get(url, httpOptions).pipe(
+      map(this.extractData),
+      catchError(this.handleError));
+  }
+
+  addSelQues(selQuesInfo: string){
+    console.log('selected question set',selQuesInfo);
+    const url = `${sapiUrl}`;
+    console.log("url", url);
+    return this.http.post(url, selQuesInfo, httpOptions).pipe(
+        map(this.extractData),
+        catchError(this.handleError));
+
   }
 }

@@ -138,19 +138,7 @@
             </a>
           </li>
 
-          <li>
-            <div class="form-group">
 
-              <!--<mat-form-field>
-                <mat-label>Favorite food</mat-label>
-                <mat-select>
-                  <mat-option *ngFor="let food of foods" [value]="food.value">
-                    {{food.viewValue}}
-                  </mat-option>
-                </mat-select>
-              </mat-form-field>-->
-            </div>
-          </li>
           <li>
 
           </li>
@@ -184,6 +172,7 @@
       <!-- Charts -->
       <div class="row">
         <div class="col-md-6">
+          <form class="js-validation-login form-horizontal push-30-t push-50" [formGroup]="quesForm" (ngSubmit)="onFormSubmit(quesForm.value)" method="post">
           <div class="block block-rounded block-opt-refresh-icon8">
             <div class="block-header">
               <ul class="block-options">
@@ -217,14 +206,6 @@
               </select>
                 <br>
                 Question Set:
-                <!--<select class="form-control" id="qset" #qset>
-                  <option>-&#45;&#45;Select-&#45;&#45;</option>
-                  <option>Set-I</option>
-                  <option>Set-II</option>
-                  <option>Set-III</option>
-                  <option>Set-IV</option>
-                  <option>Set-V</option>
-                </select>-->
                 <button class="mt-2" mat-raised-button (click)="onAdd()" color="primary">Question Sets</button>
                 <br>
                 Duration: <select class="form-control" id="duration" #duration>
@@ -236,13 +217,19 @@
                 <option>1 month</option>
               </select>
                 <br>
-                Course Name: <input type="text" placeholder="Formal Name" class="form-control" #cName>
+                Course Name:
+                <mat-form-field class="example-full-width">
+                  <input matInput type="text" placeholder="Course Name" class="form-control" formControlName="cName" id="cName" #cName>
+                </mat-form-field>
                 <br>
-                Students Email Addresses: <textarea class="form-control" id="sEmails" #sEmails></textarea>
+                Students Email Addresses:
+                <mat-form-field class="example-full-width">
+                  <textarea matInput type="text" placeholder="Email Ids" class="form-control" formControlName="sEmails" id="sEmails" name="sEmails" #sEmails></textarea>
+                </mat-form-field>
                 <br>
                 <div class="form-group ">
                   <div class="col-xs-12 col-sm-6 col-md-4 button-padding">
-                    <button type="button" class="btn btn-block btn-primary" (click)="sendEmail();" > Add</button>
+                    <button type="button" class="btn btn-block btn-primary" (click)="sendEmail(sEmails.value);" > Add</button>
                   </div>
                 </div>
               </div>
@@ -251,6 +238,7 @@
             </div>
 
           </div>
+        </form>
         </div>
         <div class="col-md-6">
           <div class="block block-rounded block-opt-refresh-icon8">
